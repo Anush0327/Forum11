@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Spring Security Example</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+ 
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+ 
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+ 
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Ensure padding doesn't increase the width */
+        }
+
+ 
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+ 
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+</style>
+</head>
+<body>
+<form th:action="@{/register/success}" method="post">
+<input type="hidden" name="email" th:value="${email}">
+<div><label> OTP: <input type="password" name="Otp"/> </label></div>
+<div><input type="submit" value="Submit!"/></div>
+</form>
+</body>
+</html>
